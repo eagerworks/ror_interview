@@ -1,0 +1,8 @@
+en:
+  application:
+    name: RoR Interview
+    owner: Unidentified Developer
+    description: "You can update this description in `config/locales/en/application.en.yml`."
+    keywords: ror interview seo keywords
+    support_email: change.me@localhost
+    key: ror_interview

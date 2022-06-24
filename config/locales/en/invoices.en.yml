@@ -1,0 +1,94 @@
+en:
+  invoices: &invoices
+    label: &label Invoices
+    breadcrumbs:
+      label: *label
+    navigation:
+      label: *label
+      icon: ti ti-receipt
+    buttons: &buttons
+      new: Add New Invoice
+      create: Create Invoice
+      edit: Edit Invoice
+      update: Update Invoice
+      destroy: Remove Invoice
+      shorthand:
+        edit: Edit
+        destroy: Delete
+      confirmations:
+        # TODO customize for your use-case.
+        destroy: Are you sure you want to remove %{invoice_name}? This will also remove it's associated data. This can't be undone.
+    fields: &fields
+      id:
+        heading: Invoice ID
+      team_id:
+        heading: Team ID
+      description:
+        _: &description Description
+        label: *description
+        heading: *description
+      total:
+        _: &total Total
+        label: *total
+        heading: *total
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at Added
+        label: *created_at
+        heading: *created_at
+      updated_at:
+        _: &updated_at Updated
+        label: *updated_at
+        heading: *updated_at
+    api:
+      collection_actions: "Collection Actions for Invoices"
+      index: "List Invoices"
+      create: "Add a New Invoice"
+      member_actions: "Actions for an Individual Invoice"
+      show: "Retrieve a Invoice"
+      update: "Update a Invoice"
+      destroy: "Delete a Invoice"
+      fields: *fields
+    index:
+      section: "%{teams_possessive} Invoices"
+      contexts:
+        team:
+          header: Invoices
+          description: Below is a list of Invoices that have been added for %{team_name}.
+          description_empty: No Invoices have been added for %{team_name}.
+      fields: *fields
+      buttons: *buttons
+    show:
+      section: "%{invoice_name}"
+      header: Invoice Details
+      description: Below are the details we have for %{invoice_name}.
+      manage_description: You'll also find options for updating these details or removing %{invoice_name} from %{team_name} entirely.
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      buttons: *buttons
+      fields: *fields
+    new:
+      section: "New Invoice for %{team_name}"
+      header: New Invoice Details
+      description: Please provide the details of the new Invoice you'd like to add to %{team_name}.
+      form: *form
+    edit:
+      section: "%{invoice_name}"
+      header: Edit Invoice Details
+      description: You can update the details or settings for %{invoice_name} below.
+      form: *form
+    notifications:
+      created: Invoice was successfully created.
+      updated: Invoice was successfully updated.
+      destroyed: Invoice was successfully destroyed.
+  account:
+    invoices: *invoices
+  activerecord:
+    attributes:
+      invoice:
+        description: *description
+        total: *total
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at
